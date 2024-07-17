@@ -1,5 +1,6 @@
 import requests
 import time
+import webbrowser
 
 def check_version(url):
     try:

@@ -10,8 +10,6 @@
 
 - **Emojilerle Şifreleme**: Python kodunuzu emojiler kullanarak şifreler, böylece kodunuzun anlaşılması daha da güçleşir.
 
-- **Diğer Araçlar**: Projenizi GitHub üzerinde paylaşan geliştiriciye ait diğer araçlara erişim sağlar.
-
 ## Kullanım
 ![1](https://github.com/softwarEWA/Efuscater/blob/main/Resimler/Screenshot_40.png)
 1. **Python Kod Karmaşıklaştırma (Obfuscation)**:

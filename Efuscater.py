@@ -61,7 +61,7 @@ def encode_string(in_s,alfabe):A=dict(enumerate(alfabe));B={B:A for(A,B)in A.ite
 def obfspyc():
 	C='obfuscated.py';B=input(soru+'Proje ismi > '+cyan)
 	if not os.path.exists(B):sprint(hata+'Dosya bulunamadı ?');os.system(_C);obfspyc()
-	os.system('python EwaRypter.py '+B+' obfuscated.py');A=input(soru+'Output Filename  > '+green)
+	os.system('python o.py '+B+' obfuscated.py');A=input(soru+'Output Filename  > '+green)
 	with open(C,'r')as D,open(A,'w')as E:F=D.read();E.write('# Encrypted by E-fuscater\n# Github- https://github.com/softwarEWA\n\n'+F)
 	os.remove(C);sprint(f"{basarili}{A}'projesi başarı ile {pwd} konumuna kayıt edildi");mover(A);main()
 def decryptsh():sprint('GELİŞTİRİLİYOR YAZDIĞIM HALDE NİYE TIKLIYORSUN SALAKMISIN AMK');main()

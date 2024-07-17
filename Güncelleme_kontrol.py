@@ -1,4 +1,5 @@
 import requests
+import time
 
 def check_version(url):
     try:
@@ -10,13 +11,15 @@ def check_version(url):
             
             if remote_version != local_version:
                 print(f"Yeni güncelleme mevcut: {remote_version}! Lütfen güncelleyin.")
+                time.sleep(1)
+                webbrowser.open('https://github.com/softwarEWA/Efuscater')
             else:
                 print("Program güncel.")
+                time.sleep(3)
         else:
             print(f"Hata: {response.status_code}")
     except requests.RequestException as e:
         print(f"Hata: {e}")
 
-# URL'nizi buraya yapıştırın
 url = "https://github.com/softwarEWA/Efuscater/raw/main/tool_version.txt"
 check_version(url)

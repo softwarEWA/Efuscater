@@ -3,22 +3,21 @@ import os
 
 print("\nEfuscater için gereken kütüphaneler indiriliyor:")
 
-# Common libraries to install on both platforms
 gereken_kutuphaneler = [
      "pprint",
 ]
 
-# Function to install libraries on Windows
+
 def windows_kutuphanelerini_indir(libs):
     for lib in libs:
         os.system(f"pip install {lib}")
 
-# Function to install libraries on Linux
+
 def install_libraries_linux(libs):
     for lib in libs:
         os.system(f"pip3 install {lib}")
 
-# Platform-specific installation
+
 if sys.platform.startswith("win"):
     print("WINDOWS")
     os.system("python.exe -m pip install --upgrade pip")

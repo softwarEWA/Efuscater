@@ -1,6 +1,8 @@
-_F='# Encrypted by E-Fuscater\n# Github- https://github.com/softwarEWA\n\n'
-_E='Çıktı ismi  > '
-_D='Dosya ismi  > '
+_H='# Encrypted by E-Fuscater\n# Github- https://github.com/softwarEWA\n\n'
+_G='Dosya ismi  > '
+_F='Dosya bulunamadı ?'
+_E='Proje ismi > '
+_D='Çıktı ismi  > '
 _C='cls'
 _B='] '
 _A='\n['
@@ -35,7 +37,7 @@ ascıı=f"""
 def sprint(sentence,second=.05):
 	for A in sentence+'\n':sys.stdout.write(A);sys.stdout.flush();time.sleep(second)
 def about():
-	os.system(_C);sprint(ascıı,.01);print(f"{cyan}[Tool_İsmi] {purple} :[E-fuscater]");print(f"{cyan}[Version]   {purple} :[1.0]");print(f"{cyan}[Author]    {purple} :[eware0]");print(f"{cyan}[Github]    {purple} :[https://github.com/softwarEWA]");print(f"{cyan}[Telegram]  {purple} :[https://t.me/eware0]");print(f"{cyan}[İnstagram] {purple} :[https://instagram.com/eware0]\n");A=input(soru+'menüye gitmek için 1, çıkmak için 0 > '+green)
+	os.system(_C);sprint(ascıı,.01);print(f"{cyan}[Tool_İsmi] {purple} :[K-E-fuscater]");print(f"{cyan}[Version]   {purple} :[1.0]");print(f"{cyan}[Author]    {purple} :[eware0]");print(f"{cyan}[Github]    {purple} :[https://github.com/softwarEWA]");print(f"{cyan}[Telegram]  {purple} :[https://t.me/eware0]");print(f"{cyan}[İnstagram] {purple} :[https://instagram.com/eware0]\n");A=input(soru+'menüye gitmek için 1, çıkmak için 0 > '+green)
 	if A=='1':main()
 	else:exit()
 def mover(cıktı_dosyası):
@@ -59,34 +61,37 @@ def obfuscate(DEGİSKEN_İ,file_content):
 def chunk_string(in_s,n):"String'i maksimum n uzunluğunda parçalara ayır";return'\n'.join('{}\\'.format(in_s[A:A+n])for A in range(0,len(in_s),n)).rstrip('\\')
 def encode_string(in_s,alfabe):A=dict(enumerate(alfabe));B={B:A for(A,B)in A.items()};return'exec("".join(map(chr,[int("".join(str({}[i]) for i in x.split())) for x in\n"{}"\n.split("  ")])))\n'.format(pformat(B),chunk_string('  '.join(' '.join(A[int(B)]for B in str(ord(B)))for B in in_s),MAX_STR_LEN))
 def obfspyc():
-	C='obfuscated.py';B=input(soru+'Proje ismi > '+cyan)
-	if not os.path.exists(B):sprint(hata+'Dosya bulunamadı ?');os.system(_C);obfspyc()
-	os.system('python o.py '+B+' obfuscated.py');A=input(soru+'Output Filename  > '+green)
+	C='obfuscated.py';B=input(soru+_E+cyan)
+	if not os.path.exists(B):sprint(hata+_F);os.system(_C);obfspyc()
+	os.system('python o.py '+B+' obfuscated.py');A=input(soru+_D+green)
 	with open(C,'r')as D,open(A,'w')as E:F=D.read();E.write('# Encrypted by E-fuscater\n# Github- https://github.com/softwarEWA\n\n'+F)
 	os.remove(C);sprint(f"{basarili}{A}'projesi başarı ile {pwd} konumuna kayıt edildi");mover(A);main()
-def decryptsh():sprint('GELİŞTİRİLİYOR YAZDIĞIM HALDE NİYE TIKLIYORSUN SALAKMISIN AMK');main()
+def obfbc():
+	A=input(soru+_E+cyan)
+	if not os.path.exists(A):sprint(hata+_F);os.system(_C);obfbc()
+	os.system('start batch.bat '+A+' obfuscated.bat');sprint(f"{basarili}{A}'projesi başarı ile {pwd} konumuna kayıt edildi");main()
 def encryptvar():
-	B=input(soru+'Kullanılacak kelimeyi yazınız > '+green)
+	B=input(soru+'Kullanılacak kelimeyi yazınız{red}(GEREKLİ)  > '+green)
 	if B=='':sprint(hata+'Kelimeyi yazmadınız');time.sleep(3);encryptvar()
 	if B.find(' ')!=-1:sprint(hata+'Sadece 1 kelime girin lütfen');time.sleep(3);encryptvar()
 	A=input(soru+'Değişkenin tekrarlanma sayısı  > '+green)
 	try:A=int(A)
 	except Exception:A=50
-	E=B*A;D=input(soru+_D+cyan)
+	E=B*A;D=input(soru+_G+cyan)
 	if not os.path.isfile(D):print(hata+'Dosya bulunamadı');time.sleep(2);encryptvar()
-	C=input(soru+_E+green)
-	with open(D,'r',encoding='utf-8',errors='ignore')as F,open(C,'w')as G:H=F.read();I=obfuscate(E,H);G.write(_F+I)
+	C=input(soru+_D+green)
+	with open(D,'r',encoding='utf-8',errors='ignore')as F,open(C,'w')as G:H=F.read();I=obfuscate(E,H);G.write(_H+I)
 	sprint(f"{basarili}{C}'projesi başarı ile {pwd} konumuna kayıt edildi");mover(C)
 def encryptem():
-	B=input(soru+_D+cyan)
+	B=input(soru+_G+cyan)
 	if not os.path.isfile(B):print(hata+' Dosya bulunamadı');time.sleep(2);encryptem()
-	A=input(soru+_E+green)
-	with open(B)as D,open(A,'w',encoding='utf-8')as C:C.write(_F);C.write(encode_string(D.read(),alfabe));sprint(f"{basarili}{A}'projesi başarı ile {pwd} konumuna kayıt edildi");mover(A)
+	A=input(soru+_D+green)
+	with open(B)as D,open(A,'w',encoding='utf-8')as C:C.write(_H);C.write(encode_string(D.read(),alfabe));sprint(f"{basarili}{A}'projesi başarı ile {pwd} konumuna kayıt edildi");mover(A)
 def main():
-	os.system(_C);sprint(ascıı,.01);print(f"{green}[1]{cyan} Python kodunu{red} karmaşıklaştır (obfuscate)");print(f"{green}[?]{red} Geliştiriliyor...");print(f"{green}[3]{cyan} Python kodunu bir değişkenle{red} Şifrele");print(f"{green}[4]{yellow} Python kodunu {red}Emojiler ile{cyan} Şifrele");print(f"{green}[5]{yellow} Diğer toollarım");print(f"{green}[6]{yellow} Hakkımda");print(f"{green}[0]{yellow} Çıkış");A=input(f"{soru}{blue}Bir seçim yap : {cyan}")
+	os.system(_C);sprint(ascıı,.01);print(f"{green}[1]{cyan} Python kodunu{red} karmaşıklaştır (obfuscate)");print(f"{green}[2]{red} Bat kodunu{red} karmaşıklaştır (obfuscate)");print(f"{green}[3]{cyan} Python kodunu bir değişkenle{red} Şifrele");print(f"{green}[4]{yellow} Python kodunu {red}Emojiler ile{cyan} Şifrele");print(f"{green}[5]{yellow} Diğer toollarım");print(f"{green}[6]{yellow} Hakkımda");print(f"{green}[0]{yellow} Çıkış");A=input(f"{soru}{blue}Bir seçim yap : {cyan}")
 	while True:
 		if A=='1'or A=='01':obfspyc()
-		elif A=='?'or A=='02':decryptsh()
+		elif A=='2'or A=='02':obfbc()
 		elif A=='3'or A=='03':encryptvar()
 		elif A=='4'or A=='04':encryptem()
 		elif A=='5'or A=='05':
